@@ -1,4 +1,5 @@
 
+
 // This adds a quality gate that aborts the pipeline if the quality threshold isn't met
 pipeline {
   agent any
@@ -15,7 +16,7 @@ pipeline {
         scannerHome = tool 'sonarqube'
       }
         steps {
-            withSonarQubeEnv('sonarqube-1') {        
+            withSonarQubeEnv('sonarqube1') {        
               sh "${scannerHome}/bin/sonar-scanner"
         }
         timeout(time: 10, unit: 'MINUTES'){
